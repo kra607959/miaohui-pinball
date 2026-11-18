@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#3a2029">
+  <title>庙会弹珠</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/192.png">
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <main class="stage" id="stage" aria-label="庙会弹珠">
+    <canvas class="score-canvas" id="score-canvas" aria-label="计分面板" data-hud hidden></canvas>
+    <canvas id="board" aria-label="台面、右侧发射道和两块挡板">需要支持 Canvas 的浏览器。</canvas>
+    <header class="hud" data-hud>
+      <h1>庙会弹珠</h1>
+      <p id="mode">试摊 · 三珠挑战</p>
+      <div class="debug" id="debug" hidden>
+        <div><span id="fps">— FPS</span> · <span id="steps">0 步/帧</span> · <span id="ticks">#0</span></div>
+        <div class="inputs" aria-label="输入状态">
+          <span data-input="left">左 0</span><span data-input="right">右 0</span>
+          <span data-input="launch">发射 0</span><span data-input="nudge">摇台 0</span>
+        </div>
+        <div id="latency"></div>
+        <pre id="recent"></pre>
+      </div>
+    </header>
+    <button type="button" id="pause" data-hud aria-pressed="false">暂停</button>
+    <button type="button" id="settings-button" data-hud>设置</button>
+    <section id="settings-panel" class="settings-panel" aria-label="游戏设置" data-hud hidden>
+      <h2>设置</h2>
+      <label>主音量<input type="range" name="volume" min="0" max="1" step="0.01"></label>
+      <label>音效<input type="range" name="effects" min="0" max="1" step="0.01"></label>
+      <label>音乐<input type="range" name="music" min="0" max="1" step="0.01"></label>
+      <label><input type="checkbox" name="vibration">挡板振动</label>
+      <label><input type="checkbox" name="reduceMotion">减少晃动</label>
+      <button type="button">关闭</button>
+    </section>
+    <div id="guide" aria-hidden="true" hidden><span data-guide="left">按住左侧</span><span data-guide="right">按住右侧</span><span data-guide="launch">按住蓄力 · 松开发射</span></div>
+    <div id="inventory" data-hud hidden></div>
+    <section id="scene" class="scene" data-hud hidden></section>
+    <section id="banner" data-hud role="status" hidden><h2></h2><p></p><small>轻点跳过</small></section>
+    <section id="pause-panel" data-hud hidden><h2>暂停</h2><p>重开本台回到开台前：重算本台分数和铜钱，恢复本台用掉的符。</p>
+      <button id="unpause">继续</button><button id="restart">重开本台</button><button id="pause-settings">设置</button><button id="back-title">回标题</button></section>
+    <p class="paused" id="paused" role="status" data-hud hidden>已暂停</p>
+    <p class="hint" data-hud><span>← → 挡板 · 空格蓄力 · F2 调试</span><span>右半边蓄力 · 松手发珠</span></p>
+    <section class="table-result" id="table-result" data-hud hidden>
+      <h2></h2><p></p><button type="button">重开试摊</button>
+    </section>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

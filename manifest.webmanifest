@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "庙会弹珠",
+  "short_name": "庙会弹珠",
+  "description": "一日三街，九摊弹珠。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#24151d",
+  "theme_color": "#3a2029",
+  "icons": [
+    { "src": "./icons/192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

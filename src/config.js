@@ -1,0 +1,23 @@
+export const config = Object.freeze({
+  board: Object.freeze({ width: 560, height: 1000, playWidth: 520, maxDpr: 2 }),
+  clock: Object.freeze({ fixedStep: 1 / 480, maxFrameSeconds: 0.25 }),
+  flipper: Object.freeze({ leftX: 152, rightX: 368, y: 900, length: 96, restDegrees: 32, raisedDegrees: -22, rootRadius: 12, tipRadius: 6, upSpeed: 26, downSpeed: 14, restitution: 0.4, kickFloor: 1500, kickResponse: 0.34, aimRoot: -35, aimTip: 30, passFrom: 0.15, passTo: 0.58, passRoll: 52, passRun: 300, passX: 430, passY: 335, passUpSpeed: 5 }),
+  physics: Object.freeze({ radius: 11, gravity: 1150, maxSpeed: 2800, damping: 0.99, iterations: 3,
+    arcSegment: 12, cellSize: 64, stepLimit: 0.6, ballRestitution: 0.9 }),
+  materials: Object.freeze({
+    wall: Object.freeze({ restitution: 0.45, friction: 0.02 }),
+    rubber: Object.freeze({ restitution: 0.7, friction: 0.02 }),
+    bumper: Object.freeze({ restitution: 0.9, boost: 700, minimum: 800 }),
+    sling: Object.freeze({ restitution: 0.7, triggerSpeed: 60, minimum: 900 }),
+  }),
+  plunger: Object.freeze({ x: 538, y: 951, fullIn: 0.9, baseSpeed: 1300, extraSpeed: 1300 }),
+  table: Object.freeze({ saucerHold: 1, saucerSpeed: 1500, saucerRepeatSeconds: 8, saucerRepeatAngle: 26, orbitWindow: 4, spinnerImpulse: 480,
+    spinnerDecay: 0.19, dropReset: 1, outlaneY: 901, outlaneLeft: 68, outlaneRight: 452, marketOutlaneY: 886, marketOutlaneWidth: 55 }),
+  game: Object.freeze({ ballCount: 3, targets: Object.freeze([2000, 3500, 7300, 7800, 10800, 17000, 22500, 31000, 43000]),
+    ballSave: 16, comboSeconds: 1.5, skillPoints: 500, lanternSetPoints: 100, multiCatch: 3, multiCount: 3, multiScore: 2,
+    nudgePower: 160, nudgeAngle: 30, tiltAdd: 35, tiltDecay: 12, tiltWarning: 70, tiltLimit: 100,
+    stuckSpeed: 25, stuckAfter: 2.5, stuckAttempts: 3 }),
+  points: Object.freeze({ bumper: 10, sling: 5, lane: 15, drop: 25, standup: 20, saucer: 150, spinner: 2, orbit: 50, inlane: 10, outlane: 0, post: 0, dragon: 15 }),
+  bot: Object.freeze({ holdTime: 0.15, minPower: 0.6, maxPower: 1, waitAfter: 0.35, reachAhead: 0.027 }),
+  touch: Object.freeze({ swipePixels: 32 }),
+});
